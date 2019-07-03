@@ -47,26 +47,7 @@ public class MainController {
 	
 	@Autowired
 	VesselMasterService vesselMasterService;
-	
-
-//	@RequestMapping(value="/allbranch", method=RequestMethod.GET)
-//	private List<branch> getAllBranch() {
-//		System.out.println(branchservice.getAllBranch().toString());
-//		return branchservice.getAllBranch();
-//	}
-//	
-//	@RequestMapping(value="/addbranch", method=RequestMethod.POST)
-//	private branch addBranch(@RequestBody branch br) {
-//		return branchservice.addbranch(br);
-//	}
-//	
-//	@RequestMapping(value="/getbranch", method=RequestMethod.GET)
-//	private Optional<branch> getBranch(@RequestParam("id") String id){
-//		long ids = Long.parseLong(id);
-//		return branchservice.getBranch(ids);
-//	}
-	
-	
+		
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	private Register addRegister(@RequestBody Register register ) {
 		System.out.println(register.toString());
