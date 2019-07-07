@@ -8,9 +8,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -25,8 +22,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.logics.mains.model.LoginClient;
+import in.logics.mains.model.NewBookings;
 import in.logics.mains.model.Register;
 import in.logics.mains.model.ValidLogins;
+import in.logics.mains.service.BookingService;
 import in.logics.mains.service.ExcelMakerService;
 import in.logics.mains.service.LoginService;
 import in.logics.mains.service.RegistryService;
@@ -47,6 +46,9 @@ public class LoginController {
 	@Autowired
 	ExcelMakerService excelMakerService;
 	
+	@Autowired
+	BookingService bookingService;
+	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	private ValidLogins logins(@RequestBody LoginClient client ) {
 		System.out.println(client.toString());
@@ -56,6 +58,11 @@ public class LoginController {
 	@RequestMapping(value="/addregister", method=RequestMethod.POST)
 	private Register addRegister(@RequestBody Register register ) {
 		return registryservice.addRegister(register);
+	}
+	
+	@RequestMapping(value="/getBookingByBLno/{blno}", method = RequestMethod.GET)
+	private NewBookings getBookingByBLno(@PathVariable("blno") String blno) {
+		return bookingService.getBookingByBLno(blno);
 	}
 	
 	@RequestMapping(value="/downloadIn/{blno}", method = RequestMethod.GET)

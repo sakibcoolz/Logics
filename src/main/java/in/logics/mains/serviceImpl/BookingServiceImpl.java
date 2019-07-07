@@ -52,4 +52,10 @@ public class BookingServiceImpl implements BookingService {
 		bookingDao.deleteBookingById( ids);
 	}
 
+	@Override
+	public NewBookings getBookingByBLno(String blno) {
+		// TODO Auto-generated method stub
+		return bookingDao.getBookingByBlno(blno);
+	}
+
 }

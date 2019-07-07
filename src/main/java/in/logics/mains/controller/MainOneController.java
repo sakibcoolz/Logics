@@ -148,6 +148,8 @@ public class MainOneController {
 		bookingService.deleteBookingById(ids);
 	}
 	
+	
+	
 	@RequestMapping(value="/addNewItem", method = RequestMethod.POST)
 	private NewItemMaster addItem(@RequestBody NewItemMaster newItemMaster ) {
 		return newItemMasterService.addnewItem(newItemMaster);

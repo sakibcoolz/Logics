@@ -16,4 +16,6 @@ public interface BookingService {
 
 	void deleteBookingById(long ids);
 
+	NewBookings getBookingByBLno(String blno);
+
 }
