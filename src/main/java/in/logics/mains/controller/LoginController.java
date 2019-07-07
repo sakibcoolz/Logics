@@ -60,6 +60,7 @@ public class LoginController {
 		return registryservice.addRegister(register);
 	}
 	
+	
 	@RequestMapping(value="/getBookingByBLno/{blno}", method = RequestMethod.GET)
 	private NewBookings getBookingByBLno(@PathVariable("blno") String blno) {
 		return bookingService.getBookingByBLno(blno);
