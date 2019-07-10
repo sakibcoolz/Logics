@@ -71,7 +71,7 @@ public class LoginController {
 		String FILE_NAME = "src//main//resources//templates//test.xlsx";
 		System.out.println("sakib mulla");
 		XSSFWorkbook workbook = excelMakerService.InvoiceMaker(blno);
-        try {
+        try { 
             FileOutputStream outputStream = new FileOutputStream(FILE_NAME);
             workbook.write(outputStream);
             workbook.close();
