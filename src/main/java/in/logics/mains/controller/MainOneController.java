@@ -184,7 +184,8 @@ public class MainOneController {
 	
 	@RequestMapping(value="/downloadIn/{blno}", method = RequestMethod.GET)
 	private ResponseEntity<Object> downloadFile(@PathVariable("blno") String blno) throws FileNotFoundException{
-		String FILE_NAME = "/home/sakib/excel/test.xlsx";
+		//String FILE_NAME = "/home/sakib/excel/test.xlsx";
+		String FILE_NAME = "/home/indialivingdigital/excel/test.xlsx";
 		System.out.println("sakib mulla");
 		XSSFWorkbook workbook = excelMakerService.InvoiceMaker(blno);
         try {
