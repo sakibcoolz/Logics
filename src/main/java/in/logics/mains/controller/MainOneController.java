@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.logics.mains.model.Commudity;
+import in.logics.mains.model.Country_name;
 import in.logics.mains.model.Invoice_master;
 import in.logics.mains.model.NewBookings;
 import in.logics.mains.model.NewItemMaster;
@@ -33,6 +34,7 @@ import in.logics.mains.model.User_port;
 import in.logics.mains.service.AddinvoiceService;
 import in.logics.mains.service.BookingService;
 import in.logics.mains.service.CommudityService;
+import in.logics.mains.service.CountrynameService;
 import in.logics.mains.service.ExcelMakerService;
 import in.logics.mains.service.NewItemMasterService;
 import in.logics.mains.service.NotifyagentService;
@@ -67,6 +69,9 @@ public class MainOneController {
 	
 	@Autowired
 	UserPortService userPortService;
+	
+	@Autowired
+	CountrynameService countrynameService;
 	
 	@RequestMapping(value="/createNotifyAgent", method = RequestMethod.POST)
 	public NotifyMaster createNotifyMaster(@RequestBody NotifyMaster notifyMaster) {
@@ -241,6 +246,37 @@ public class MainOneController {
 		Long ids = Long.parseLong(id);
 		return userPortService.deletePortsById(ids);
 	}
+	
+	
+	@RequestMapping(value="/addcountry", method= RequestMethod.POST)
+	private Country_name addCountry(@RequestBody Country_name countryname) {
+		return countrynameService.addCountry(countryname);
+	}
+	
+	
+	@RequestMapping(value="/editcountry", method= RequestMethod.PUT)
+	private Country_name editCountry(@RequestBody Country_name countryname) {
+		return countrynameService.editCountry(countryname);
+	}
+	
+	
+	@RequestMapping(value="/getcountrybyid/{id}", method=RequestMethod.GET)
+	private Optional<Country_name> getCountryById(@PathVariable("id") String id){
+		long ids = Long.parseLong(id);
+		return countrynameService.getCountryById(ids);
+	}
+	
+	@RequestMapping(value="/getAllCountry", method=RequestMethod.GET)
+	private List<Country_name> getAllCountry(){
+		return countrynameService.getAllCountry();
+	}
+	
+	@RequestMapping(value="/deletecountrybyid/{id}", method=RequestMethod.DELETE)
+	private Country_name deleteCountryById(@PathVariable("id") String id){
+		long ids = Long.parseLong(id);
+		return countrynameService.deleteCountryById(ids);
+	}
+	
 	
 	
 	
