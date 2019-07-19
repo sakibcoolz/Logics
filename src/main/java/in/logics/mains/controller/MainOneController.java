@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import in.logics.mains.model.Commudity;
 import in.logics.mains.model.Country_name;
+import in.logics.mains.model.DeliveryAgent;
 import in.logics.mains.model.Invoice_master;
 import in.logics.mains.model.NewBookings;
 import in.logics.mains.model.NewItemMaster;
@@ -35,6 +36,7 @@ import in.logics.mains.service.AddinvoiceService;
 import in.logics.mains.service.BookingService;
 import in.logics.mains.service.CommudityService;
 import in.logics.mains.service.CountrynameService;
+import in.logics.mains.service.DeliveryAgentService;
 import in.logics.mains.service.ExcelMakerService;
 import in.logics.mains.service.NewItemMasterService;
 import in.logics.mains.service.NotifyagentService;
@@ -72,6 +74,9 @@ public class MainOneController {
 	
 	@Autowired
 	CountrynameService countrynameService;
+	
+	@Autowired
+	DeliveryAgentService deliveryAgentService;
 	
 	@RequestMapping(value="/createNotifyAgent", method = RequestMethod.POST)
 	public NotifyMaster createNotifyMaster(@RequestBody NotifyMaster notifyMaster) {
@@ -275,6 +280,37 @@ public class MainOneController {
 	private Country_name deleteCountryById(@PathVariable("id") String id){
 		long ids = Long.parseLong(id);
 		return countrynameService.deleteCountryById(ids);
+	}
+	
+	
+	
+	@RequestMapping(value="/addDeliveruAgent", method= RequestMethod.POST)
+	private DeliveryAgent addDeliveruAgent(@RequestBody DeliveryAgent deliveryAgent) {
+		return deliveryAgentService.addDeliveruAgent(deliveryAgent);
+	}
+	
+	
+	@RequestMapping(value="/editDeliveruAgent", method= RequestMethod.PUT)
+	private DeliveryAgent editDeliveryAgent(@RequestBody DeliveryAgent deliveryAgent) {
+		return deliveryAgentService.editDeliveryAgent(deliveryAgent);
+	}
+	
+	
+	@RequestMapping(value="/getDeliveryAgentbyid/{id}", method=RequestMethod.GET)
+	private Optional<DeliveryAgent> getDeliveryAgentById(@PathVariable("id") String id){
+		long ids = Long.parseLong(id);
+		return deliveryAgentService.getDeliveryAgentById(ids);
+	}
+	
+	@RequestMapping(value="/getAllDeliveryAgent", method=RequestMethod.GET)
+	private List<DeliveryAgent> getAllDeliveryAgnt(){
+		return deliveryAgentService.getAllDeliveryAgnt();
+	}
+	
+	@RequestMapping(value="/deleteDeliveryAgentbyid/{id}", method=RequestMethod.DELETE)
+	private DeliveryAgent deleteDeliveryAgentById(@PathVariable("id") String id){
+		long ids = Long.parseLong(id);
+		return deliveryAgentService.deleteDeliveryAgentById(ids);
 	}
 	
 	
