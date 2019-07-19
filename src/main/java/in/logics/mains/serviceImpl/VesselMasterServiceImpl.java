@@ -27,14 +27,14 @@ public class VesselMasterServiceImpl implements VesselMasterService{
 	public Vessel_master addVessel(Vessel_master vessel_master) {
 		try {
 			vessel_master.setId(sequenceDao.getNextSequenceId(HOSTING_SEQ_KEY));
-			List<Routess> r = vessel_master.getRoutess();
-//			for (int i = 0; i < r.size(); i++) {
-//				r.setId(sequenceDao.getNextSequenceId(HOSTING_SEQ_KEY));
+//			List<Routess> r = vessel_master.getRoutess();
+////			for (int i = 0; i < r.size(); i++) {
+////				r.setId(sequenceDao.getNextSequenceId(HOSTING_SEQ_KEY));
+////			}
+//			for (Routess routess : r) {
+//				routess.setId(sequenceDao.getNextSequenceId(HOSTING_SEQ_KEY));
 //			}
-			for (Routess routess : r) {
-				routess.setId(sequenceDao.getNextSequenceId(HOSTING_SEQ_KEY));
-			}
-			vessel_master.setRoutess(r);
+//			vessel_master.setRoutess(r);
 			
 		} catch (Exception e) {
 			// TODO: handle exception

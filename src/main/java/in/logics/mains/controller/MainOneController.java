@@ -29,6 +29,7 @@ import in.logics.mains.model.NewBookings;
 import in.logics.mains.model.NewItemMaster;
 import in.logics.mains.model.NotifyMaster;
 import in.logics.mains.model.Port_names;
+import in.logics.mains.model.User_port;
 import in.logics.mains.service.AddinvoiceService;
 import in.logics.mains.service.BookingService;
 import in.logics.mains.service.CommudityService;
@@ -36,6 +37,7 @@ import in.logics.mains.service.ExcelMakerService;
 import in.logics.mains.service.NewItemMasterService;
 import in.logics.mains.service.NotifyagentService;
 import in.logics.mains.service.Port_names_Service;
+import in.logics.mains.service.UserPortService;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -62,6 +64,9 @@ public class MainOneController {
 	
 	@Autowired
 	ExcelMakerService excelMakerService;
+	
+	@Autowired
+	UserPortService userPortService;
 	
 	@RequestMapping(value="/createNotifyAgent", method = RequestMethod.POST)
 	public NotifyMaster createNotifyMaster(@RequestBody NotifyMaster notifyMaster) {
@@ -207,5 +212,38 @@ public class MainOneController {
 		ResponseEntity<Object> responseEntity = ResponseEntity.ok().headers(headers).contentLength(file.length()).contentType(MediaType.parseMediaType("application/txt")).body(resource);
 		return responseEntity;
 	}
+	
+	@RequestMapping(value="/addPorts", method = RequestMethod.POST)
+	private User_port addPorts(@RequestBody User_port user_port) {
+		return userPortService.addPorts(user_port);
+	}
+	
+	@RequestMapping(value="/EditPorts", method = RequestMethod.PUT)
+	private User_port EditPorts(@RequestBody User_port user_port) {
+		return userPortService.editPorts(user_port);
+	}
+	
+	
+	@RequestMapping(value="/findPortsbyId/{id}", method = RequestMethod.GET)
+	private Optional<User_port> findbyPorts(@PathVariable("id") String id) {
+		long ids = Long.parseLong(id);
+		return userPortService.findPortsById(ids);
+	}
+	
+	
+	@RequestMapping(value="/allPorts", method = RequestMethod.GET)
+	private List<User_port> findAllPorts() {
+		return userPortService.allPorts();
+	}
+	
+	@RequestMapping(value="/deletePortsById/{id}", method = RequestMethod.DELETE)
+	private User_port deletePortsById(@PathVariable("id") String id) {
+		Long ids = Long.parseLong(id);
+		return userPortService.deletePortsById(ids);
+	}
+	
+	
+	
+	
 	
 }

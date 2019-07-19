@@ -15,6 +15,8 @@ public class VesselMasterDaoImpl implements VesselMasterDao {
 
 	@Autowired
 	VesselMasterRepo vesselMasterRepo;
+	
+	
 	@Override
 	public Vessel_master addVessel(Vessel_master vessel_master) {
 		// TODO Auto-generated method stub
