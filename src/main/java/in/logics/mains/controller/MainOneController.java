@@ -282,13 +282,10 @@ public class MainOneController {
 		return countrynameService.deleteCountryById(ids);
 	}
 	
-	
-	
 	@RequestMapping(value="/addDeliveruAgent", method= RequestMethod.POST)
 	private DeliveryAgent addDeliveruAgent(@RequestBody DeliveryAgent deliveryAgent) {
 		return deliveryAgentService.addDeliveruAgent(deliveryAgent);
 	}
-	
 	
 	@RequestMapping(value="/editDeliveruAgent", method= RequestMethod.PUT)
 	private DeliveryAgent editDeliveryAgent(@RequestBody DeliveryAgent deliveryAgent) {
