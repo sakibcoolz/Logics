@@ -313,9 +313,4 @@ public class MainOneController {
 		return deliveryAgentService.deleteDeliveryAgentById(ids);
 	}
 	
-	
-	
-	
-	
-	
 }
