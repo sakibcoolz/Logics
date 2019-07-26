@@ -6,4 +6,6 @@ import in.logics.mains.model.NewStatusMaster;
 
 public interface NewStatusMasterRepo extends MongoRepository<NewStatusMaster, Long> {
 
+	NewStatusMaster deleteNewStatusMasterById(long ids);
+
 }

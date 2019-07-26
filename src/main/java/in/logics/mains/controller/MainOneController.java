@@ -319,7 +319,15 @@ public class MainOneController {
 		return newStatusMasterService.addNewStatus( newStatusMaster );
 	}
 	
+	@RequestMapping(value="/getAllStatus", method=RequestMethod.GET)
+	private List<NewStatusMaster> getAllstatus() {
+		return newStatusMasterService.getAllstatus();
+	}
 	
-	
+	@RequestMapping(value="/deleteStatus/{id}", method=RequestMethod.DELETE)
+	private NewStatusMaster deleteStatus(@PathVariable("id") String id) {
+		long ids = Long.parseLong(id);
+		return newStatusMasterService.deleteStatus( ids);
+	}
 	
 }

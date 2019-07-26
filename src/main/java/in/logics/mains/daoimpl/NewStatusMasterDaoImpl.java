@@ -1,5 +1,7 @@
 package in.logics.mains.daoimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,20 @@ public class NewStatusMasterDaoImpl implements NewStatusMasterDao {
 	public NewStatusMaster addNewStatus(NewStatusMaster newStatusMaster) {
 		// TODO Auto-generated method stub
 		return newStatusMasterRepo.save(newStatusMaster);
+	}
+
+
+	@Override
+	public List<NewStatusMaster> getAllstatus() {
+		// TODO Auto-generated method stub
+		return newStatusMasterRepo.findAll();
+	}
+
+
+	@Override
+	public NewStatusMaster deleteStatus(long ids) {
+		// TODO Auto-generated method stub
+		return newStatusMasterRepo.deleteNewStatusMasterById(ids);
 	}
 
 }

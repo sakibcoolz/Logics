@@ -1,5 +1,7 @@
 package in.logics.mains.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +31,17 @@ public class NewStatusMasterServiceImpl implements NewStatusMasterService {
 			e.printStackTrace();
 		}
 		return newStatusMasterDao.addNewStatus( newStatusMaster);
+	}
+
+	@Override
+	public List<NewStatusMaster> getAllstatus() {
+		return newStatusMasterDao.getAllstatus();
+	}
+
+	@Override
+	public NewStatusMaster deleteStatus(long ids) {
+		// TODO Auto-generated method stub
+		return newStatusMasterDao.deleteStatus( ids);
 	}
 
 }
