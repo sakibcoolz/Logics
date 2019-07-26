@@ -29,6 +29,7 @@ import in.logics.mains.model.DeliveryAgent;
 import in.logics.mains.model.Invoice_master;
 import in.logics.mains.model.NewBookings;
 import in.logics.mains.model.NewItemMaster;
+import in.logics.mains.model.NewStatusMaster;
 import in.logics.mains.model.NotifyMaster;
 import in.logics.mains.model.Port_names;
 import in.logics.mains.model.User_port;
@@ -39,6 +40,7 @@ import in.logics.mains.service.CountrynameService;
 import in.logics.mains.service.DeliveryAgentService;
 import in.logics.mains.service.ExcelMakerService;
 import in.logics.mains.service.NewItemMasterService;
+import in.logics.mains.service.NewStatusMasterService;
 import in.logics.mains.service.NotifyagentService;
 import in.logics.mains.service.Port_names_Service;
 import in.logics.mains.service.UserPortService;
@@ -77,6 +79,9 @@ public class MainOneController {
 	
 	@Autowired
 	DeliveryAgentService deliveryAgentService;
+	
+	@Autowired
+	NewStatusMasterService newStatusMasterService;
 	
 	@RequestMapping(value="/createNotifyAgent", method = RequestMethod.POST)
 	public NotifyMaster createNotifyMaster(@RequestBody NotifyMaster notifyMaster) {
@@ -264,7 +269,6 @@ public class MainOneController {
 		return countrynameService.editCountry(countryname);
 	}
 	
-	
 	@RequestMapping(value="/getcountrybyid/{id}", method=RequestMethod.GET)
 	private Optional<Country_name> getCountryById(@PathVariable("id") String id){
 		long ids = Long.parseLong(id);
@@ -309,5 +313,13 @@ public class MainOneController {
 		long ids = Long.parseLong(id);
 		return deliveryAgentService.deleteDeliveryAgentById(ids);
 	}
+	
+	@RequestMapping(value="/addNewStatus", method=RequestMethod.POST)
+	private NewStatusMaster addNewStatus(@RequestBody NewStatusMaster newStatusMaster ) {
+		return newStatusMasterService.addNewStatus( newStatusMaster );
+	}
+	
+	
+	
 	
 }
