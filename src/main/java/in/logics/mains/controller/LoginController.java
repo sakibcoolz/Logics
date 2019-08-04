@@ -55,15 +55,9 @@ public class LoginController {
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	private ValidLogins logins(@RequestBody LoginClient client ) throws ParseException {
 		System.out.println(client.toString());
-		SimpleDateFormat sdfo = new SimpleDateFormat("yyyy-MM-dd"); 
-		Date d1 = new Date();
-		Date d2 = sdfo.parse("2019-08-06");
-		if (d1.compareTo(d2) > 0) {
-			System.out.println("expire");
-			return null;
-		} else {
+		
 			return loginService.logins(client);
-		}
+		
 	}
 
 	@RequestMapping(value="/addregister", method=RequestMethod.POST)
