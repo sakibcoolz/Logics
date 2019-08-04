@@ -186,6 +186,17 @@ public class MainOneController {
 		newItemMasterService.deleteItemId(ids);
 	}
 	
+	@RequestMapping(value="/getItemById/{id}", method=RequestMethod.GET)
+	private Optional<NewItemMaster> editItem(@PathVariable("id") String id) {
+		long ids = Long.parseLong(id);
+		return newItemMasterService.getnewItembyid(ids);
+	}
+	
+	@RequestMapping(value="/editItem", method=RequestMethod.PUT)
+	private NewItemMaster editItem(@RequestBody NewItemMaster newItemMaster) {
+		return newItemMasterService.editItem(newItemMaster);
+	}
+	
 	@RequestMapping(value="/addInvoice", method = RequestMethod.POST)
 	private Invoice_master addInvoice(@RequestBody Invoice_master invoice_master) {
 		return addinvoiceService.AddInvoice(invoice_master);
@@ -328,6 +339,17 @@ public class MainOneController {
 	private NewStatusMaster deleteStatus(@PathVariable("id") String id) {
 		long ids = Long.parseLong(id);
 		return newStatusMasterService.deleteStatus( ids);
+	}
+	
+	@RequestMapping(value="/getStatusById/{id}", method=RequestMethod.GET)
+	private Optional<NewStatusMaster> getStatusById(@PathVariable("id") String id) {
+		long ids = Long.parseLong(id);
+		return newStatusMasterService.getStatusById( ids);
+	}
+	
+	@RequestMapping(value="/editStatus", method=RequestMethod.PUT)
+	private NewStatusMaster editStatus(@RequestBody NewStatusMaster newStatusMaster) {
+		return newStatusMasterService.editStatus(newStatusMaster);
 	}
 	
 }

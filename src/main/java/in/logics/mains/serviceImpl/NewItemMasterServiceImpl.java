@@ -1,6 +1,7 @@
 package in.logics.mains.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,6 +42,18 @@ public class NewItemMasterServiceImpl implements NewItemMasterService {
 	@Override
 	public void deleteItemId(long ids) {
 		newItemDao.deleteItemId( ids);
+	}
+
+	@Override
+	public Optional<NewItemMaster> getnewItembyid(long ids) {
+		// TODO Auto-generated method stub
+		return newItemDao.getnewItembyid( ids);
+	}
+
+	@Override
+	public NewItemMaster editItem(NewItemMaster newItemMaster) {
+		// TODO Auto-generated method stub
+		return newItemDao.editItem( newItemMaster);
 	}
 
 
