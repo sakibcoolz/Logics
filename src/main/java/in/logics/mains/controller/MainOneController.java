@@ -218,7 +218,7 @@ public class MainOneController {
 		//String FILE_NAME = "/home/sakib/excel/test.xlsx";
 		String FILE_NAME = "/home/indialivingdigital/excel/test.xlsx";
 		//String FILE_NAME = "src//main//resources//templates//test.xlsx";
-		System.out.println("sakib mulla");
+		System.out.println("");
 		XSSFWorkbook workbook = excelMakerService.InvoiceMaker(blno);
         try {
             FileOutputStream outputStream = new FileOutputStream(FILE_NAME);
