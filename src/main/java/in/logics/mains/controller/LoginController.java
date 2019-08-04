@@ -7,6 +7,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,9 +53,17 @@ public class LoginController {
 	BookingService bookingService;
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	private ValidLogins logins(@RequestBody LoginClient client ) {
+	private ValidLogins logins(@RequestBody LoginClient client ) throws ParseException {
 		System.out.println(client.toString());
-		return loginService.logins(client);
+		SimpleDateFormat sdfo = new SimpleDateFormat("yyyy-MM-dd"); 
+		Date d1 = new Date();
+		Date d2 = sdfo.parse("2019-08-06");
+		if (d1.compareTo(d2) > 0) {
+			System.out.println("expire");
+			return null;
+		} else {
+			return loginService.logins(client);
+		}
 	}
 
 	@RequestMapping(value="/addregister", method=RequestMethod.POST)

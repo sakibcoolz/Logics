@@ -53,6 +53,7 @@ public class InvoiceMakerImpl implements ExcelMakerService {
 	
 	@Override
 	public XSSFWorkbook InvoiceMaker(String blno) {
+		System.out.println("started");
 		XSSFWorkbook workbook = new XSSFWorkbook();
 		XSSFSheet sheet = workbook.createSheet("HHLogistics Invoice");
 		sheet.getPrintSetup().setPaperSize(PrintSetup.A4_PAPERSIZE);
@@ -153,6 +154,7 @@ public class InvoiceMakerImpl implements ExcelMakerService {
 		//###################################################
 		Invoice_master invoicemaster = addInvoiceDao.editInvoice(blno);
 		System.out.println(invoicemaster.toString());
+		System.out.println("go to agent master");
 		Agent_master agentmaster = agentDao.getAgentByName(invoicemaster.getForword_agent());
 		System.out.println(agentmaster.toString());
 		NotifyMaster notifymaster = notifyDao.getNotifyByName(invoicemaster.getNotify_agent());
