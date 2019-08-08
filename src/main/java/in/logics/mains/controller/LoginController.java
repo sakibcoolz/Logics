@@ -56,7 +56,6 @@ public class LoginController {
 	private ValidLogins logins(@RequestBody LoginClient client ) throws ParseException {
 		System.out.println(client.toString());
 			return loginService.logins(client);
-		
 	}
 
 	@RequestMapping(value="/addregister", method=RequestMethod.POST)
