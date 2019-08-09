@@ -1,6 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.3" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
-  associations="true" dependencies="true" nesting-relationships="true">  
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <package id="1" language="java" name="in.logics.mains.controller" project="Logics" 
+    file="/Logics/src/main/java/in/logics/mains/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="523" y="98"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="2" language="java" name="in.logics.mains.daoimpl" project="Logics" 
+    file="/Logics/src/main/java/in/logics/mains/daoimpl" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="278" y="98"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="3" language="java" name="in.logics.mains.config" project="Logics" 
+    file="/Logics/src/main/java/in/logics/mains/config" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1018" y="508"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="4" language="java" name="in.logics.mains.model" project="Logics" 
+    file="/Logics/src/main/java/in/logics/mains/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="370" y="560"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="5" language="java" name="in.logics.mains.repository" project="Logics" 
+    file="/Logics/src/main/java/in/logics/mains/repository" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="122" y="560"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="6" language="java" name="in.logics.mains.dao" project="Logics" 
+    file="/Logics/src/main/java/in/logics/mains/dao" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="91" y="306"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="7" language="java" name="in.logics.mains" project="Logics" file="/Logics/src/main/java/in/logics/mains" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="79" y="96"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="8" language="java" name="in.logics.mains.service" project="Logics" 
+    file="/Logics/src/main/java/in/logics/mains/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="599" y="561"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="9" language="java" name="in.logics.mains.serviceImpl" project="Logics" 
+    file="/Logics/src/main/java/in/logics/mains/serviceImpl" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="778" y="99"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="10" language="java" name="in.logics.mains.Exception" project="Logics" 
+    file="/Logics/src/main/java/in/logics/mains/Exception" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="814" y="598"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="11" language="java" name="in.logics.mains.sequences" project="Logics" 
+    file="/Logics/src/main/java/in/logics/mains/sequences" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="817" y="508"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <dependency id="12">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="13">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="14">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="15">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="16">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="17">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="18">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="19">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="20">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="21">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="22">    
+    <bendpoint x="419" y="436"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="23">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="24">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="25">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
